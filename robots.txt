@@ -1,0 +1,28 @@
+# VrindaGo Website Robots.txt
+# Allows all web crawlers and search engine bots
+# Last updated: December 27, 2025
+
+# Allow all robots to crawl the entire website
+User-agent: *
+Allow: /
+
+# Sitemap location for search engines
+Sitemap: https://vrindago.in/sitemap.xml
+
+# Specific instructions for major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Disallow crawling of potential future admin or private areas
+# (Currently no such areas exist)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl delay (optional - not needed for this site)
+# Crawl-delay: 1

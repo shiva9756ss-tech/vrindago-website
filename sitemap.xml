@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+VrindaGo Website Sitemap
+Auto-generated for SEO optimization
+Last updated: December 27, 2025
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+    <!-- Homepage - Highest priority -->
+    <url>
+        <loc>https://vrindago.in/</loc>
+        <lastmod>2025-12-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- About page - High priority -->
+    <url>
+        <loc>https://vrindago.in/about.html</loc>
+        <lastmod>2025-12-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Rooms page - Very high priority for conversions -->
+    <url>
+        <loc>https://vrindago.in/rooms.html</loc>
+        <lastmod>2025-12-27</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Guides page - High priority for future feature -->
+    <url>
+        <loc>https://vrindago.in/guides.html</loc>
+        <lastmod>2025-12-27</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- Contact page - Important for user support -->
+    <url>
+        <loc>https://vrindago.in/contact.html</loc>
+        <lastmod>2025-12-27</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+</urlset>
