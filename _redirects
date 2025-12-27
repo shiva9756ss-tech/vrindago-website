@@ -1,0 +1,11 @@
+# Netlify Redirects for VrindaGo Website
+
+# Redirect www to non-www (optional)
+https://www.vrindago.in/* https://vrindago.in/:splat 301!
+
+# 404 redirect to homepage
+/* /index.html 404
+
+# Force HTTPS
+http://vrindago.in/* https://vrindago.in/:splat 301!
+http://www.vrindago.in/* https://vrindago.in/:splat 301!
