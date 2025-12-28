@@ -1,28 +1,140 @@
+# ============================================
 # VrindaGo Website Robots.txt
-# Allows all web crawlers and search engine bots
-# Last updated: December 27, 2025
+# Website: https://vrindago.in
+# Optimized for SEO & Search Engine Crawling
+# Last updated: December 28, 2025
+# ============================================
 
-# Allow all robots to crawl the entire website
+# Default rules for all robots
 User-agent: *
 Allow: /
+Allow: /index.html
+Allow: /about.html
+Allow: /rooms.html
+Allow: /guides.html
+Allow: /contact.html
+Allow: /assets/
+Allow: /css/
+Allow: /js/
 
-# Sitemap location for search engines
+# Disallow crawling of unnecessary files
+Disallow: /*.json$
+Disallow: /404.html
+
+# Sitemap locations
 Sitemap: https://vrindago.in/sitemap.xml
 
-# Specific instructions for major search engines
+# ============================================
+# Google Specific Instructions
+# ============================================
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 1
 
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Googlebot-News
+Allow: /
+
+# ============================================
+# Bing Specific Instructions
+# ============================================
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 1
 
-User-agent: Slurp
+User-agent: MSNBot
 Allow: /
 
-# Disallow crawling of potential future admin or private areas
-# (Currently no such areas exist)
-# Disallow: /admin/
-# Disallow: /private/
+User-agent: MSNBot-Media
+Allow: /assets/images/
 
-# Crawl delay (optional - not needed for this site)
-# Crawl-delay: 1
+# ============================================
+# Yahoo Specific Instructions
+# ============================================
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# ============================================
+# Other Major Search Engines
+# ============================================
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebot
+Allow: /
+
+User-agent: ia_archiver
+Allow: /
+
+# ============================================
+# Social Media Crawlers
+# ============================================
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: Pinterest
+Allow: /
+
+# ============================================
+# SEO Tools (Allow for analysis)
+# ============================================
+User-agent: AhrefsBot
+Allow: /
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Allow: /
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Allow: /
+Crawl-delay: 10
+
+# ============================================
+# Block bad bots and scrapers
+# ============================================
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Crawl-delay: 30
+
+User-agent: dotbot
+Disallow: /
+
+User-agent: SemrushBot-BA
+Disallow: /
+
+# ============================================
+# Host directive
+# ============================================
+Host: https://vrindago.in
+
+# ============================================
+# Clean URLs hint
+# ============================================
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term&fbclid&gclid /

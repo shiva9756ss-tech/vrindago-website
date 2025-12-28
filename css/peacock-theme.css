@@ -1,0 +1,152 @@
+/* VrindaGo Logo Specific Styles */
+.nav-logo {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Peacock Feather Inspired Elements */
+.peacock-accent {
+    background: var(--peacock-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.peacock-border {
+    border-image: var(--peacock-gradient) 1;
+}
+
+/* Enhanced Professional Buttons with Peacock Theme */
+.btn-peacock {
+    background: var(--peacock-gradient);
+    color: white;
+    border: none;
+    padding: var(--space-4) var(--space-8);
+    border-radius: var(--radius-lg);
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-peacock::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: var(--peacock-gradient-hover);
+    transition: left 0.5s ease;
+}
+
+.btn-peacock:hover::before {
+    left: 0;
+}
+
+.btn-peacock:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    color: white;
+}
+
+.btn-peacock span {
+    position: relative;
+    z-index: 1;
+}
+
+/* Logo Animation */
+@keyframes featherFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-3px) rotate(1deg); }
+    50% { transform: translateY(-2px) rotate(0deg); }
+    75% { transform: translateY(-1px) rotate(-1deg); }
+}
+
+.logo-animate {
+    animation: featherFloat 3s ease-in-out infinite;
+}
+
+/* Professional Trust Elements with Theme Colors */
+.trust-element {
+    color: var(--accent-gold);
+    background: rgba(30, 64, 175, 0.1);
+    border: 1px solid rgba(30, 64, 175, 0.2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-lg);
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-weight: 600;
+}
+
+/* Enhanced Search with Peacock Theme */
+.search-input:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.1);
+}
+
+/* Category Items Enhanced */
+.category-item i {
+    color: var(--accent-gold);
+}
+
+/* Enhanced Rating System */
+.rating-stars {
+    color: var(--accent-gold);
+}
+
+/* Professional Modal/Overlay Styling */
+.modal-overlay {
+    background: rgba(30, 64, 175, 0.8);
+    backdrop-filter: blur(8px);
+}
+
+/* Enhanced Loading States */
+.loading-peacock {
+    background: var(--peacock-gradient);
+    background-size: 200% 200%;
+    animation: gradientShift 2s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Professional Focus States */
+*:focus {
+    outline: 2px solid var(--primary-blue);
+    outline-offset: 2px;
+}
+
+/* Enhanced Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .logo-animate,
+    .loading-peacock,
+    .btn-peacock::before {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .search-section,
+    .trust-bar,
+    .nav-cta,
+    .whatsapp-btn {
+        background: white !important;
+        color: var(--text-primary) !important;
+    }
+}

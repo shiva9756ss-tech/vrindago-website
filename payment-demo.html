@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VrindaGo™ - Payment System Demo</title>
+    <link rel="stylesheet" href="css/style-professional.css">
+    <link rel="stylesheet" href="css/booking-system.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center; color: var(--primary-blue); margin: 2rem 0;">
+            🦚 VrindaGo™ Payment System Demo
+        </h1>
+        
+        <div class="demo-card" style="max-width: 400px; margin: 2rem auto; padding: 2rem; background: white; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.15);">
+            <h3>MVT Guest House</h3>
+            <p><strong>Price:</strong> ₹1,200 per night</p>
+            <p><strong>Location:</strong> Raman Reti, Vrindavan</p>
+            <button class="action-btn book-now-btn" onclick="openBookingModal('mvt-guest-house', 'MVT Guest House', 1200)" style="width: 100%; margin-top: 1rem;">
+                <i class="fas fa-calendar-check"></i> Book Now
+            </button>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <h3>🌟 Payment System Features:</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); color: white; padding: 1rem; border-radius: 10px;">
+                    <i class="fas fa-qrcode" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                    <h4>UPI QR Payments</h4>
+                    <p>Scan & Pay with any UPI app</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #16a34a, #22c55e); color: white; padding: 1rem; border-radius: 10px;">
+                    <i class="fab fa-whatsapp" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                    <h4>WhatsApp Integration</h4>
+                    <p>Direct booking via WhatsApp</p>
+                </div>
+                <div style="background: linear-gradient(135deg, #7c3aed, #a855f7); color: white; padding: 1rem; border-radius: 10px;">
+                    <i class="fas fa-university" style="font-size: 2rem; margin-bottom: 0.5rem;"></i>
+                    <h4>Bank Transfer</h4>
+                    <p>Traditional NEFT/IMPS/RTGS</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: #f8fafc; padding: 2rem; border-radius: 15px; margin: 2rem 0;">
+            <h4>💰 Zero-Cost Payment Solutions:</h4>
+            <ul style="margin: 1rem 0;">
+                <li>✅ No Gateway Fees</li>
+                <li>✅ No Monthly Charges</li>
+                <li>✅ Direct Bank Transfers</li>
+                <li>✅ UPI QR Code Generation</li>
+                <li>✅ WhatsApp Automation</li>
+                <li>✅ SMS/Email Confirmations</li>
+            </ul>
+        </div>
+
+        <div style="text-align: center; margin: 2rem 0;">
+            <p style="color: #64748b;">Click "Book Now" above to test the complete payment flow!</p>
+        </div>
+    </div>
+
+    <!-- Include the booking modal from main index.html -->
+    <!-- Booking Modal -->
+    <div class="booking-modal" id="bookingModal" style="display: none;">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalPropertyName" class="modal-title">Book Your Stay</h2>
+                <button class="modal-close" onclick="closeBookingModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Step 1: Booking Details -->
+            <div class="booking-step active" id="step1">
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-section">
+                        <h3><i class="fas fa-calendar-alt"></i> Stay Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="checkinDate">Check-in Date</label>
+                                <input type="date" id="checkinDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkoutDate">Check-out Date</label>
+                                <input type="date" id="checkoutDate" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Guests</label>
+                                <div class="counter-group">
+                                    <button type="button" onclick="changeGuests(-1)" class="counter-btn">-</button>
+                                    <span id="guestCount" class="counter-value">2</span>
+                                    <button type="button" onclick="changeGuests(1)" class="counter-btn">+</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Rooms</label>
+                                <div class="counter-group">
+                                    <button type="button" onclick="changeRooms(-1)" class="counter-btn">-</button>
+                                    <span id="roomCount" class="counter-value">1</span>
+                                    <button type="button" onclick="changeRooms(1)" class="counter-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3><i class="fas fa-user"></i> Guest Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guestName">Full Name *</label>
+                                <input type="text" id="guestName" placeholder="Enter full name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="guestPhone">Phone Number *</label>
+                                <input type="tel" id="guestPhone" placeholder="+91 98765 43210" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="guestEmail">Email Address</label>
+                            <input type="email" id="guestEmail" placeholder="guest@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="specialRequests">Special Requests</label>
+                            <textarea id="specialRequests" rows="3" placeholder="Any special requirements..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="booking-summary">
+                        <h3><i class="fas fa-receipt"></i> Booking Summary</h3>
+                        <div class="summary-row">
+                            <span>Base Price:</span>
+                            <span id="basePrice">₹1,200 × 1 night</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total Amount:</span>
+                            <span id="totalAmount">₹1,200</span>
+                        </div>
+                        <div class="summary-row advance">
+                            <span>Advance Payment (30%):</span>
+                            <span id="advanceAmount">₹360</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" onclick="goToPayment()" class="btn-primary">
+                            <i class="fas fa-credit-card"></i> Proceed to Payment
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Step 2: Payment Selection -->
+            <div class="booking-step" id="step2">
+                <div class="payment-step">
+                    <div class="step-header">
+                        <button type="button" onclick="goBackToDetails()" class="back-btn">
+                            <i class="fas fa-arrow-left"></i> Back to Details
+                        </button>
+                        <h3><i class="fas fa-credit-card"></i> Select Payment Method</h3>
+                    </div>
+
+                    <div class="payment-methods">
+                        <div class="payment-method active" onclick="selectPaymentMethod('upi')">
+                            <div class="payment-icon">
+                                <i class="fas fa-qrcode"></i>
+                            </div>
+                            <div class="payment-info">
+                                <h4>UPI QR Code</h4>
+                                <p>Scan & pay with any UPI app</p>
+                            </div>
+                            <div class="payment-amount" id="qrAmount">₹360</div>
+                        </div>
+
+                        <div class="payment-method" onclick="selectPaymentMethod('whatsapp')">
+                            <div class="payment-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="payment-info">
+                                <h4>WhatsApp Payment</h4>
+                                <p>Pay via WhatsApp chat</p>
+                            </div>
+                            <div class="payment-amount" id="upiAmount">₹360</div>
+                        </div>
+
+                        <div class="payment-method" onclick="selectPaymentMethod('bank')">
+                            <div class="payment-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="payment-info">
+                                <h4>Bank Transfer</h4>
+                                <p>NEFT/IMPS/RTGS transfer</p>
+                            </div>
+                            <div class="payment-amount" id="bankAmount">₹360</div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Details Sections -->
+                    <div class="payment-details" id="upiPayment" style="display: block;">
+                        <div class="payment-content">
+                            <h4><i class="fas fa-qrcode"></i> UPI QR Payment</h4>
+                            <div class="qr-section">
+                                <div class="qr-code">
+                                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=upi://pay?pa=vrindago@okaxis&pn=VrindaGo&tn=Hotel_Booking_Payment&am=360&cu=INR" alt="UPI QR Code">
+                                </div>
+                                <div class="qr-instructions">
+                                    <p><strong>Scan QR with any UPI app:</strong></p>
+                                    <div class="upi-apps">
+                                        <span>📱 PhonePe</span>
+                                        <span>📱 GPay</span>
+                                        <span>📱 Paytm</span>
+                                        <span>📱 BHIM</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="payment-info-section">
+                                <div class="info-item">
+                                    <strong>UPI ID:</strong>
+                                    <span id="upiId">vrindago@okaxis</span>
+                                    <button type="button" onclick="copyToClipboard('upiId')" class="copy-btn">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                                <div class="info-item">
+                                    <strong>Amount:</strong>
+                                    <span>₹<span id="qrAmount">360</span></span>
+                                </div>
+                                <div class="info-item">
+                                    <strong>Reference:</strong>
+                                    <span id="paymentRef">VG-MVT-123456</span>
+                                    <button type="button" onclick="copyToClipboard('paymentRef')" class="copy-btn">
+                                        <i class="fas fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-details" id="whatsappPayment" style="display: none;">
+                        <div class="payment-content">
+                            <h4><i class="fab fa-whatsapp"></i> WhatsApp Payment</h4>
+                            <div class="whatsapp-section">
+                                <div class="whatsapp-instructions">
+                                    <p>Click the button below to send your booking details via WhatsApp. Our team will respond with the payment link.</p>
+                                    <button type="button" onclick="sendWhatsAppPayment()" class="whatsapp-pay-btn">
+                                        <i class="fab fa-whatsapp"></i> Send Booking Request
+                                    </button>
+                                </div>
+                                <div class="confirmation-info">
+                                    <h5>After payment, confirm via:</h5>
+                                    <div class="confirmation-methods">
+                                        <button type="button" onclick="confirmViaWhatsApp()" class="confirm-btn">
+                                            <i class="fab fa-whatsapp"></i> WhatsApp
+                                        </button>
+                                        <button type="button" onclick="confirmViaCall()" class="confirm-btn">
+                                            <i class="fas fa-phone"></i> Call
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-details" id="bankPayment" style="display: none;">
+                        <div class="payment-content">
+                            <h4><i class="fas fa-university"></i> Bank Transfer</h4>
+                            <div class="bank-details">
+                                <div class="bank-info">
+                                    <div class="info-item">
+                                        <strong>Account Name:</strong>
+                                        <span>VrindaGo Tourism Pvt Ltd</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <strong>Account Number:</strong>
+                                        <span id="accountNumber">50200123456789</span>
+                                        <button type="button" onclick="copyToClipboard('accountNumber')" class="copy-btn">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <div class="info-item">
+                                        <strong>IFSC Code:</strong>
+                                        <span id="ifscCode">HDFC0001234</span>
+                                        <button type="button" onclick="copyToClipboard('ifscCode')" class="copy-btn">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                    <div class="info-item">
+                                        <strong>Bank:</strong>
+                                        <span>HDFC Bank</span>
+                                    </div>
+                                    <div class="info-item">
+                                        <strong>Amount:</strong>
+                                        <span>₹<span id="bankAmount">360</span></span>
+                                    </div>
+                                    <div class="info-item">
+                                        <strong>Reference:</strong>
+                                        <span id="bankRef">VG-MVT-123456</span>
+                                        <button type="button" onclick="copyToClipboard('bankRef')" class="copy-btn">
+                                            <i class="fas fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="transfer-note">
+                                    <p><strong>Note:</strong> Please mention the reference number in your transfer remarks.</p>
+                                </div>
+                            </div>
+                            <div class="confirmation-info">
+                                <h5>After transfer, confirm via:</h5>
+                                <div class="confirmation-methods">
+                                    <button type="button" onclick="confirmViaWhatsApp()" class="confirm-btn">
+                                        <i class="fab fa-whatsapp"></i> WhatsApp
+                                    </button>
+                                    <button type="button" onclick="confirmViaEmail()" class="confirm-btn">
+                                        <i class="fas fa-envelope"></i> Email
+                                    </button>
+                                    <button type="button" onclick="confirmViaCall()" class="confirm-btn">
+                                        <i class="fas fa-phone"></i> Call
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="payment-actions">
+                        <button type="button" onclick="completeBooking()" class="btn-success">
+                            <i class="fas fa-check-circle"></i> Complete Booking
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Confirmation Modal -->
+    <div class="confirmation-modal" id="confirmationModal" style="display: none;">
+        <div class="modal-backdrop"></div>
+        <div class="confirmation-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2>Booking Confirmed! 🎉</h2>
+            <div class="confirmation-details">
+                <div class="detail-item">
+                    <strong>Property:</strong>
+                    <span id="confirmProperty">MVT Guest House</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Dates:</strong>
+                    <span id="confirmDates">25 Dec - 26 Dec 2024</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Details:</strong>
+                    <span id="confirmGuests">2 guests, 1 room</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Reference:</strong>
+                    <span id="confirmRef">VG-MVT-123456</span>
+                </div>
+                <div class="detail-item">
+                    <strong>Advance Paid:</strong>
+                    <span id="confirmAmount">₹360</span>
+                </div>
+            </div>
+            <p class="confirmation-note">
+                You will receive a confirmation call within 30 minutes. 
+                Check-in instructions will be shared via WhatsApp.
+            </p>
+            <button class="close-confirmation" onclick="closeConfirmationModal()">
+                <i class="fas fa-times"></i> Close
+            </button>
+        </div>
+    </div>
+
+    <script src="js/booking-system.js"></script>
+</body>
+</html>
