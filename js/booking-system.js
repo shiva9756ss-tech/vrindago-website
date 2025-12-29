@@ -62,8 +62,18 @@ class VrindaGoBookingSystem {
         }
     }
 
-    // Open booking modal
-    openBookingModal(propertyId, propertyName, price) {
+    // Open booking modal with property details
+    openBookingModal(propertyId, propertyName, pricePerNight) {
+        // Track booking attempt in Google Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'booking_modal_open', {
+                'event_category': 'engagement', 
+                'property_name': propertyName,
+                'property_price': pricePerNight
+            });
+        }
+        
+        // Update current booking details
         this.currentBooking.propertyId = propertyId;
         this.currentBooking.propertyName = propertyName;
         this.currentBooking.pricePerNight = price;

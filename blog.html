@@ -47,6 +47,23 @@
     }
     </script>
 
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+        
+        // Track blog engagement
+        function trackBlogEngagement(action) {
+            gtag('event', 'blog_engagement', {
+                'engagement_type': action,
+                'event_category': 'content'
+            });
+        }
+    </script>
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/style-professional.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">

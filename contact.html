@@ -13,6 +13,15 @@
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://vrindago.in/contact.html">
     <meta name="robots" content="index, follow">
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -292,6 +301,14 @@
             
             if (form) {
                 form.addEventListener('submit', function(e) {
+                    // Track form submission in Google Analytics
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'contact_form_submit', {
+                            'event_category': 'lead',
+                            'event_label': 'contact_page'
+                        });
+                    }
+                    
                     // Show loading state
                     submitBtn.disabled = true;
                     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
