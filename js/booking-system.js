@@ -520,6 +520,63 @@ document.addEventListener('DOMContentLoaded', () => {
     window.bookingSystem = new VrindaGoBookingSystem();
 });
 
+// Global functions for HTML onclick events
+function openBookingModal(propertyId, propertyName, pricePerNight) {
+    if (window.bookingSystem) {
+        window.bookingSystem.openBookingModal(propertyId, propertyName, pricePerNight);
+    }
+}
+
+function closeBookingModal() {
+    if (window.bookingSystem) {
+        window.bookingSystem.closeBookingModal();
+    }
+}
+
+function changeGuests(delta) {
+    if (window.bookingSystem) {
+        window.bookingSystem.changeGuests(delta);
+    }
+}
+
+function changeRooms(delta) {
+    if (window.bookingSystem) {
+        window.bookingSystem.changeRooms(delta);
+    }
+}
+
+function goToPayment() {
+    if (window.bookingSystem) {
+        window.bookingSystem.goToPayment();
+    }
+}
+
+function selectPaymentMethod(method) {
+    if (window.bookingSystem) {
+        window.bookingSystem.selectPaymentMethod(method);
+    }
+}
+
+function showQRCode() {
+    if (window.bookingSystem) {
+        window.bookingSystem.showQRCode();
+    }
+}
+
+function confirmBooking() {
+    if (window.bookingSystem) {
+        window.bookingSystem.confirmBooking();
+    }
+}
+
+function closeConfirmationModal() {
+    const confirmationModal = document.getElementById('confirmationModal');
+    if (confirmationModal) {
+        confirmationModal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+}
+
 // Close modal when clicking outside
 document.addEventListener('click', (event) => {
     const bookingModal = document.getElementById('bookingModal');

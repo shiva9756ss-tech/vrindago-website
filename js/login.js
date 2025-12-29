@@ -96,8 +96,51 @@ function handleLogin(e) {
 }
 
 function authenticateUser(email, password) {
-    // Demo authentication - replace with real API call
+    // Frontend-only demo authentication
+    // In a real deployment, this would make API calls to your backend
     const demoUsers = {
+        'admin@vrindago.in': {
+            name: 'VrindaGo Admin',
+            role: 'admin',
+            password: 'admin123'
+        },
+        'owner@vrindago.in': {
+            name: 'Property Owner',
+            role: 'owner',
+            password: 'owner123'
+        },
+        'demo@vrindago.in': {
+            name: 'Demo User',
+            role: 'owner', 
+            password: 'demo123'
+        }
+    };
+    
+    const user = demoUsers[email];
+    
+    if (!user) {
+        return {
+            success: false,
+            message: 'Email not found. Use demo@vrindago.in for testing.'
+        };
+    }
+    
+    if (user.password !== password) {
+        return {
+            success: false,
+            message: 'Incorrect password. Try demo123 for demo account.'
+        };
+    }
+    
+    return {
+        success: true,
+        user: {
+            email: email,
+            name: user.name,
+            role: user.role,
+            id: Math.random().toString(36).substr(2, 9)
+        }
+    };
         'owner@vrindago.in': {
             password: 'owner123',
             name: 'Property Owner',
