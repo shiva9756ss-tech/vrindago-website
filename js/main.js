@@ -492,3 +492,103 @@ style.textContent = `
 `;
 
 document.head.appendChild(style);
+
+// January 2026 Offers Banner Functionality
+function initializeOffersBanner() {
+    // Countdown Timer
+    const countdownDate = new Date('January 31, 2026 23:59:59').getTime();
+    
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const distance = countdownDate - now;
+        
+        if (distance > 0) {
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            
+            const daysEl = document.getElementById('days');
+            const hoursEl = document.getElementById('hours');
+            const minutesEl = document.getElementById('minutes');
+            
+            if (daysEl) daysEl.textContent = days;
+            if (hoursEl) hoursEl.textContent = hours;
+            if (minutesEl) minutesEl.textContent = minutes;
+        } else {
+            // Offer expired
+            const banner = document.getElementById('offersBanner');
+            if (banner) {
+                banner.style.display = 'none';
+            }
+        }
+    }
+    
+    // Update countdown every minute
+    updateCountdown();
+    setInterval(updateCountdown, 60000);
+    
+    // Check if banner was previously closed
+    const bannerClosed = localStorage.getItem('jan2026OfferBannerClosed');
+    if (bannerClosed === 'true') {
+        const banner = document.getElementById('offersBanner');
+        if (banner) {
+            banner.style.display = 'none';
+        }
+    }
+}
+
+// Close banner function
+function closeBanner() {
+    const banner = document.getElementById('offersBanner');
+    if (banner) {
+        banner.style.animation = 'slideUp 0.5s ease-out forwards';
+        setTimeout(() => {
+            banner.style.display = 'none';
+        }, 500);
+        
+        // Remember user closed the banner
+        localStorage.setItem('jan2026OfferBannerClosed', 'true');
+        
+        // Track banner close event
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'banner_closed', {
+                'banner_name': 'january_2026_offers',
+                'event_category': 'user_interaction'
+            });
+        }
+    }
+}
+
+// Scroll to rooms function
+function scrollToRooms() {
+    const roomsSection = document.getElementById('rooms') || document.querySelector('.business-listings');
+    if (roomsSection) {
+        roomsSection.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+        });
+        
+        // Track offer banner click
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'offer_banner_click', {
+                'banner_name': 'january_2026_offers',
+                'event_category': 'conversion'
+            });
+        }
+    }
+}
+
+// Add slide up animation
+const bannerStyle = document.createElement('style');
+bannerStyle.textContent = `
+    @keyframes slideUp {
+        from { transform: translateY(0); opacity: 1; }
+        to { transform: translateY(-100%); opacity: 0; }
+    }
+`;
+document.head.appendChild(bannerStyle);
+
+// Initialize banner when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeOffersBanner();
+});

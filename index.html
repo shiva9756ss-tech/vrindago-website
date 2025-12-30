@@ -156,6 +156,195 @@
     <link rel="stylesheet" href="css/peacock-theme.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
     
+    <!-- January 2026 Offers Banner Styles -->
+    <style>
+    .offers-banner {
+        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #0ea5e9 100%);
+        color: white;
+        padding: 20px 0;
+        position: relative;
+        overflow: hidden;
+        animation: bannerGlow 3s ease-in-out infinite alternate;
+        border-bottom: 3px solid #f59e0b;
+    }
+    
+    @keyframes bannerGlow {
+        from { box-shadow: inset 0 0 20px rgba(245, 158, 11, 0.2); }
+        to { box-shadow: inset 0 0 40px rgba(245, 158, 11, 0.4); }
+    }
+    
+    .offers-banner::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        animation: shimmer 3s infinite;
+    }
+    
+    @keyframes shimmer {
+        0% { left: -100%; }
+        100% { left: 100%; }
+    }
+    
+    .offers-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 30px;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .offers-left {
+        flex: 1;
+    }
+    
+    .offer-badge {
+        background: #f59e0b;
+        color: #1e3a8a;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-bottom: 10px;
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+    }
+    
+    .offer-title {
+        font-size: 28px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    
+    .offer-description {
+        font-size: 16px;
+        margin-bottom: 15px;
+        opacity: 0.95;
+    }
+    
+    .offer-features {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .feature {
+        font-size: 14px;
+        opacity: 0.9;
+    }
+    
+    .offers-right {
+        text-align: center;
+    }
+    
+    .countdown-timer {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    
+    .timer-item {
+        background: rgba(255,255,255,0.15);
+        padding: 10px;
+        border-radius: 10px;
+        min-width: 60px;
+        backdrop-filter: blur(10px);
+    }
+    
+    .timer-number {
+        display: block;
+        font-size: 24px;
+        font-weight: 700;
+        color: #f59e0b;
+    }
+    
+    .timer-label {
+        display: block;
+        font-size: 12px;
+        opacity: 0.8;
+    }
+    
+    .offer-btn {
+        background: linear-gradient(135deg, #f59e0b, #eab308);
+        color: #1e3a8a;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 25px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+        margin-bottom: 10px;
+    }
+    
+    .offer-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+    }
+    
+    .offer-validity {
+        font-size: 12px;
+        opacity: 0.8;
+    }
+    
+    .banner-close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        background: rgba(255,255,255,0.2);
+        border: none;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .banner-close:hover {
+        background: rgba(255,255,255,0.3);
+        transform: scale(1.1);
+    }
+    
+    @media (max-width: 768px) {
+        .offers-content {
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+        }
+        
+        .offer-title {
+            font-size: 24px;
+        }
+        
+        .countdown-timer {
+            gap: 10px;
+        }
+        
+        .timer-item {
+            min-width: 50px;
+            padding: 8px;
+        }
+        
+        .timer-number {
+            font-size: 20px;
+        }
+    }
+    </style>
+    
     <!-- Advanced Structured Data - Organization -->
     <script type="application/ld+json">
     {
@@ -550,6 +739,49 @@
                     <i class="fas fa-clock"></i>
                     <span>24/7 Support</span>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- January 2026 Offers Banner -->
+    <div class="offers-banner" id="offersBanner">
+        <div class="container">
+            <div class="offers-content">
+                <div class="offers-left">
+                    <div class="offer-badge">🎉 NEW YEAR SPECIAL</div>
+                    <h2 class="offer-title">January 2026 Sacred Deals!</h2>
+                    <p class="offer-description">Start your spiritual journey with amazing discounts. Book now and save up to 40% on premium stays!</p>
+                    <div class="offer-features">
+                        <div class="feature">✨ Up to 40% OFF on all properties</div>
+                        <div class="feature">🏨 Free room upgrades available</div>
+                        <div class="feature">🍽️ Complimentary breakfast included</div>
+                    </div>
+                </div>
+                <div class="offers-right">
+                    <div class="offer-cta">
+                        <div class="countdown-timer">
+                            <div class="timer-item">
+                                <span class="timer-number" id="days">31</span>
+                                <span class="timer-label">Days</span>
+                            </div>
+                            <div class="timer-item">
+                                <span class="timer-number" id="hours">12</span>
+                                <span class="timer-label">Hours</span>
+                            </div>
+                            <div class="timer-item">
+                                <span class="timer-number" id="minutes">30</span>
+                                <span class="timer-label">Minutes</span>
+                            </div>
+                        </div>
+                        <button class="offer-btn" onclick="scrollToRooms()">
+                            🚀 Book Now & Save Big!
+                        </button>
+                        <p class="offer-validity">Valid till January 31st, 2026</p>
+                    </div>
+                </div>
+                <button class="banner-close" onclick="closeBanner()" title="Close banner">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
         </div>
     </div>

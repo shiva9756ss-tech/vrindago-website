@@ -77,6 +77,185 @@
             margin-bottom: var(--space-8);
         }
         
+        /* Quick Progress Bar */
+        .quick-progress {
+            text-align: center;
+            margin-bottom: var(--space-8);
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--border-light);
+            border-radius: 50px;
+            overflow: hidden;
+            margin-bottom: var(--space-3);
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
+            border-radius: 50px;
+            width: 0%;
+            transition: width 0.3s ease;
+            animation: progress-glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes progress-glow {
+            from { box-shadow: 0 0 5px rgba(14, 165, 233, 0.3); }
+            to { box-shadow: 0 0 20px rgba(14, 165, 233, 0.6); }
+        }
+        
+        .progress-text {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        
+        /* Enhanced Form Styles */
+        .form-group.highlight {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.03), rgba(14, 165, 233, 0.03));
+            border: 2px solid rgba(30, 58, 138, 0.1);
+            border-radius: var(--radius-lg);
+            padding: var(--space-5);
+            margin-bottom: var(--space-6);
+        }
+        
+        .form-help {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-top: var(--space-2);
+            font-style: italic;
+        }
+        
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-3);
+            margin-top: var(--space-3);
+        }
+        
+        .form-checkbox label {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+        
+        .agreement {
+            background: var(--bg-light);
+            padding: var(--space-4);
+            border-radius: var(--radius-md);
+            margin-top: var(--space-6);
+        }
+        
+        .agreement label {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        /* Submit Button */
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
+            color: white;
+            border: none;
+            padding: var(--space-4) var(--space-6);
+            border-radius: var(--radius-lg);
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: var(--space-6);
+        }
+        
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(30, 58, 138, 0.3);
+        }
+        
+        .submit-note {
+            text-align: center;
+            color: var(--text-secondary);
+            margin-top: var(--space-3);
+            font-size: 14px;
+        }
+        
+        /* Success Animation */
+        .success-animation {
+            text-align: center;
+            margin-bottom: var(--space-6);
+        }
+        
+        .success-animation i {
+            font-size: 80px;
+            color: var(--accent-green);
+            animation: success-bounce 0.6s ease-in-out;
+        }
+        
+        @keyframes success-bounce {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        
+        .next-steps {
+            background: var(--bg-light);
+            padding: var(--space-4);
+            border-radius: var(--radius-md);
+            margin: var(--space-6) 0;
+        }
+        
+        .next-steps h3 {
+            margin-bottom: var(--space-3);
+            color: var(--text-primary);
+        }
+        
+        .next-steps ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .next-steps li {
+            padding: var(--space-2) 0;
+            color: var(--text-secondary);
+        }
+        
+        .success-actions {
+            display: flex;
+            gap: var(--space-4);
+            justify-content: center;
+            margin-top: var(--space-6);
+        }
+        
+        .btn {
+            padding: var(--space-3) var(--space-5);
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: var(--primary-blue);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-blue-dark);
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: var(--bg-light);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-medium);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--border-light);
+        }
+        
         .step-indicator {
             display: flex;
             align-items: center;
@@ -348,283 +527,203 @@
 <body>
     <div class="register-container">
         <div class="register-wrapper">
-            <!-- Header -->
+            <!-- Enhanced Header -->
             <div class="register-header">
                 <div class="logo">
-                    <i class="fas fa-plus-circle"></i>
+                    <i class="fas fa-home"></i>
                 </div>
-                <h1>Register Your Property</h1>
-                <p>Join VrindaGo and reach thousands of pilgrims visiting Vrindavan</p>
+                <h1>List Your Property - Quick & Easy!</h1>
+                <p>Join VrindaGo in just 2 minutes. Start earning from your property today!</p>
             </div>
             
-            <!-- Registration Form -->
+            <!-- Quick Registration Form -->
             <div class="register-form">
-                <!-- Steps Indicator -->
-                <div class="form-steps">
-                    <div class="step-indicator">
-                        <div class="step active" data-step="1">1</div>
-                        <div class="step-line"></div>
-                        <div class="step" data-step="2">2</div>
-                        <div class="step-line"></div>
-                        <div class="step" data-step="3">3</div>
-                        <div class="step-line"></div>
-                        <div class="step" data-step="4">4</div>
+                <!-- Simple Progress -->
+                <div class="quick-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
                     </div>
+                    <p class="progress-text">Quick & Easy Registration</p>
                 </div>
                 
-                <!-- Error Message -->
-                <div id="errorMessage" class="error-message"></div>
-                
-                <form id="registrationForm">
+                <form id="registrationForm" name="property-registration" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <!-- Netlify spam protection -->
+                    <input type="hidden" name="form-name" value="property-registration">
+                    <div style="display: none;">
+                        <input name="bot-field">
+                    </div>
                     <!-- Step 1: Owner Information -->
                     <div class="form-section active" id="step1">
                         <h2 class="section-title">Owner Information</h2>
                         <p class="section-subtitle">Tell us about yourself as the property owner</p>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">First Name *</label>
-                                <input type="text" id="firstName" name="firstName" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Last Name *</label>
-                                <input type="text" id="lastName" name="lastName" class="form-input" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" class="form-input" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="address">Complete Address *</label>
-                            <textarea id="address" name="address" class="form-textarea" required placeholder="Enter your complete address"></textarea>
-                        </div>
-                    </div>
                     
-                    <!-- Step 2: Property Details -->
-                    <div class="form-section" id="step2">
-                        <h2 class="section-title">Property Details</h2>
-                        <p class="section-subtitle">Provide details about your property</p>
+                    <!-- Single Easy Form -->
+                    <div class="form-section active" id="quickRegister">
+                        <h2 class="section-title">📍 Your Property Information</h2>
+                        <p class="section-subtitle">Just the essentials - we'll help you add more details later!</p>
                         
-                        <div class="form-group">
-                            <label for="propertyName">Property Name *</label>
-                            <input type="text" id="propertyName" name="propertyName" class="form-input" required placeholder="e.g., Radha Krishna Guest House">
+                        <!-- Essential Property Info -->
+                        <div class="form-group highlight">
+                            <label for="propertyName">🏨 What's your property called? *</label>
+                            <input type="text" id="propertyName" name="propertyName" class="form-input" required 
+                                   placeholder="e.g., Radha Krishna Guest House, Vrinda Villa, etc.">
+                            <div class="form-help">This is how guests will find your property</div>
                         </div>
                         
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="propertyType">Property Type *</label>
+                                <label for="propertyType">🏠 Property Type *</label>
                                 <select id="propertyType" name="propertyType" class="form-select" required>
-                                    <option value="">Select Type</option>
-                                    <option value="hotel">Hotel</option>
-                                    <option value="guesthouse">Guest House</option>
-                                    <option value="dharamshala">Dharamshala</option>
-                                    <option value="ashram">Ashram</option>
-                                    <option value="rooms">Private Rooms</option>
-                                    <option value="apartment">Apartment</option>
+                                    <option value="">Choose type...</option>
+                                    <option value="hotel">🏨 Hotel</option>
+                                    <option value="guesthouse">🏡 Guest House</option>
+                                    <option value="dharamshala">🕌 Dharamshala</option>
+                                    <option value="ashram">🛕 Ashram</option>
+                                    <option value="rooms">🚪 Private Rooms</option>
+                                    <option value="apartment">🏢 Apartment</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="totalRooms">Total Rooms *</label>
-                                <input type="number" id="totalRooms" name="totalRooms" class="form-input" required min="1">
+                                <label for="totalRooms">🚪 How many rooms? *</label>
+                                <input type="number" id="totalRooms" name="totalRooms" class="form-input" required min="1" max="100" 
+                                       placeholder="e.g., 5">
                             </div>
                         </div>
                         
-                        <div class="form-group">
-                            <label for="propertyAddress">Property Address *</label>
-                            <textarea id="propertyAddress" name="propertyAddress" class="form-textarea" required placeholder="Complete property address in Vrindavan/Mathura"></textarea>
+                        <!-- Location -->
+                        <div class="form-group highlight">
+                            <label for="location">📍 Where is it located? *</label>
+                            <select id="location" name="location" class="form-select" required>
+                                <option value="">Select area...</option>
+                                <option value="banke-bihari">🛕 Near Banke Bihari Temple</option>
+                                <option value="prem-mandir">✨ Near Prem Mandir</option>
+                                <option value="iskcon">🎭 Near ISKCON Temple</option>
+                                <option value="mathura-station">🚂 Near Mathura Junction</option>
+                                <option value="vrindavan-center">🏛️ Vrindavan Center</option>
+                                <option value="govardhan">⛰️ Govardhan Area</option>
+                                <option value="barsana">🌸 Barsana</option>
+                                <option value="nandgaon">🌺 Nandgaon</option>
+                                <option value="other">📍 Other (specify below)</option>
+                            </select>
                         </div>
                         
+                        <div class="form-group" id="customLocation" style="display: none;">
+                            <label for="customLocationText">Specify your location:</label>
+                            <input type="text" id="customLocationText" name="customLocation" class="form-input" 
+                                   placeholder="e.g., Near Radha Raman Temple, Seva Kunj area">
+                        </div>
+                        
+                        <!-- Contact -->
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="nearestTemple">Nearest Temple/Landmark</label>
-                                <input type="text" id="nearestTemple" name="nearestTemple" class="form-input" placeholder="e.g., Banke Bihari Temple - 500m">
+                                <label for="ownerName">👤 Your Name *</label>
+                                <input type="text" id="ownerName" name="ownerName" class="form-input" required 
+                                       placeholder="Your full name">
                             </div>
                             <div class="form-group">
-                                <label for="priceRange">Price Range (per night) *</label>
-                                <select id="priceRange" name="priceRange" class="form-select" required>
-                                    <option value="">Select Range</option>
-                                    <option value="budget">Budget (₹500-1500)</option>
-                                    <option value="mid">Mid-Range (₹1500-3000)</option>
-                                    <option value="premium">Premium (₹3000-5000)</option>
-                                    <option value="luxury">Luxury (₹5000+)</option>
-                                </select>
+                                <label for="whatsapp">📱 WhatsApp Number *</label>
+                                <input type="tel" id="whatsapp" name="whatsapp" class="form-input" required 
+                                       placeholder="e.g., +91 93689 04498">
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- Step 3: Amenities & Services -->
-                    <div class="form-section" id="step3">
-                        <h2 class="section-title">Amenities & Services</h2>
-                        <p class="section-subtitle">Select the amenities and services your property offers</p>
                         
-                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-4);">
-                            <div>
-                                <h4 style="margin-bottom: var(--space-3); color: var(--text-primary);">Basic Amenities</h4>
-                                <div class="form-checkbox">
-                                    <input type="checkbox" id="wifi" name="amenities" value="wifi">
-                                    <label for="wifi">Free Wi-Fi</label>
-                                </div>
+                        <!-- Pricing -->
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="minPrice">💰 Starting Price (per night) *</label>
+                                <input type="number" id="minPrice" name="minPrice" class="form-input" required min="100" 
+                                       placeholder="e.g., 800">
+                            </div>
+                            <div class="form-group">
+                                <label for="maxPrice">💎 Maximum Price (per night)</label>
+                                <input type="number" id="maxPrice" name="maxPrice" class="form-input" min="100" 
+                                       placeholder="e.g., 2500">
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Amenities -->
+                        <div class="form-group">
+                            <label>⭐ Key Amenities (check all that apply):</label>
+                            <div class="amenities-grid">
                                 <div class="form-checkbox">
                                     <input type="checkbox" id="ac" name="amenities" value="ac">
-                                    <label for="ac">Air Conditioning</label>
+                                    <label for="ac">❄️ AC Rooms</label>
+                                </div>
+                                <div class="form-checkbox">
+                                    <input type="checkbox" id="wifi" name="amenities" value="wifi">
+                                    <label for="wifi">📶 Free WiFi</label>
                                 </div>
                                 <div class="form-checkbox">
                                     <input type="checkbox" id="parking" name="amenities" value="parking">
-                                    <label for="parking">Free Parking</label>
+                                    <label for="parking">🚗 Parking</label>
                                 </div>
                                 <div class="form-checkbox">
-                                    <input type="checkbox" id="breakfast" name="amenities" value="breakfast">
-                                    <label for="breakfast">Complimentary Breakfast</label>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <h4 style="margin-bottom: var(--space-3); color: var(--text-primary);">Room Features</h4>
-                                <div class="form-checkbox">
-                                    <input type="checkbox" id="privateBath" name="amenities" value="privateBath">
-                                    <label for="privateBath">Private Bathroom</label>
+                                    <input type="checkbox" id="food" name="amenities" value="food">
+                                    <label for="food">🍽️ Food Service</label>
                                 </div>
                                 <div class="form-checkbox">
-                                    <input type="checkbox" id="tv" name="amenities" value="tv">
-                                    <label for="tv">Television</label>
+                                    <input type="checkbox" id="temple-view" name="amenities" value="temple-view">
+                                    <label for="temple-view">🛕 Temple View</label>
                                 </div>
                                 <div class="form-checkbox">
-                                    <input type="checkbox" id="balcony" name="amenities" value="balcony">
-                                    <label for="balcony">Balcony/Terrace</label>
-                                </div>
-                                <div class="form-checkbox">
-                                    <input type="checkbox" id="hotWater" name="amenities" value="hotWater">
-                                    <label for="hotWater">24/7 Hot Water</label>
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <h4 style="margin-bottom: var(--space-3); color: var(--text-primary);">Special Services</h4>
-                                <div class="form-checkbox">
-                                    <input type="checkbox" id="templeTransport" name="services" value="templeTransport">
-                                    <label for="templeTransport">Temple Transportation</label>
-                                </div>
-                                <div class="form-checkbox">
-                                    <input type="checkbox" id="guide" name="services" value="guide">
-                                    <label for="guide">Local Guide Service</label>
-                                </div>
-                                <div class="form-checkbox">
-                                    <input type="checkbox" id="prasad" name="services" value="prasad">
-                                    <label for="prasad">Prasad Arrangement</label>
-                                </div>
-                                <div class="form-checkbox">
-                                    <input type="checkbox" id="pickup" name="services" value="pickup">
-                                    <label for="pickup">Station/Airport Pickup</label>
+                                    <input type="checkbox" id="family-friendly" name="amenities" value="family-friendly">
+                                    <label for="family-friendly">👨‍👩‍👧‍👦 Family Friendly</label>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="form-group" style="margin-top: var(--space-6);">
-                            <label for="description">Property Description *</label>
-                            <textarea id="description" name="description" class="form-textarea" required placeholder="Describe your property, highlighting unique features and spiritual atmosphere"></textarea>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 4: Documents & Verification -->
-                    <div class="form-section" id="step4">
-                        <h2 class="section-title">Documents & Verification</h2>
-                        <p class="section-subtitle">Upload required documents for verification</p>
-                        
+                        <!-- Optional Description -->
                         <div class="form-group">
-                            <label>Property Images (Upload 5-10 high-quality photos) *</label>
-                            <div class="file-upload" onclick="document.getElementById('propertyImages').click()">
-                                <i class="fas fa-camera"></i>
-                                <div class="file-upload-text">
-                                    <strong>Click to upload property images</strong><br>
-                                    or drag and drop files here<br>
-                                    <small>JPG, PNG files up to 5MB each</small>
-                                </div>
-                                <input type="file" id="propertyImages" name="propertyImages" multiple accept=".jpg,.jpeg,.png" required>
-                            </div>
+                            <label for="description">📝 Tell guests about your property (optional):</label>
+                            <textarea id="description" name="description" class="form-textarea" rows="3" 
+                                      placeholder="e.g., Peaceful location near temple, clean rooms, home-cooked food available..."></textarea>
                         </div>
                         
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label>Owner ID Proof *</label>
-                                <div class="file-upload" onclick="document.getElementById('ownerIdProof').click()">
-                                    <i class="fas fa-id-card"></i>
-                                    <div class="file-upload-text">
-                                        <strong>Upload ID Proof</strong><br>
-                                        <small>Aadhaar, PAN, Driving License</small>
-                                    </div>
-                                    <input type="file" id="ownerIdProof" name="ownerIdProof" accept=".jpg,.jpeg,.png,.pdf" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label>Property Registration/License</label>
-                                <div class="file-upload" onclick="document.getElementById('propertyDocs').click()">
-                                    <i class="fas fa-file-alt"></i>
-                                    <div class="file-upload-text">
-                                        <strong>Upload Property Documents</strong><br>
-                                        <small>Trade License, Registration Certificate</small>
-                                    </div>
-                                    <input type="file" id="propertyDocs" name="propertyDocs" accept=".jpg,.jpeg,.png,.pdf">
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div style="background: var(--bg-light); padding: var(--space-4); border-radius: var(--radius-md); margin: var(--space-6) 0;">
-                            <h4 style="margin-bottom: var(--space-3); color: var(--text-primary);">Terms & Conditions</h4>
-                            <div class="form-checkbox">
-                                <input type="checkbox" id="terms" name="terms" required>
-                                <label for="terms">I agree to VrindaGo's <a href="#" style="color: var(--primary-blue);">Terms of Service</a> and <a href="#" style="color: var(--primary-blue);">Privacy Policy</a></label>
-                            </div>
-                            <div class="form-checkbox">
-                                <input type="checkbox" id="commission" name="commission" required>
-                                <label for="commission">I understand VrindaGo's commission structure and payment terms</label>
-                            </div>
-                            <div class="form-checkbox">
-                                <input type="checkbox" id="accuracy" name="accuracy" required>
-                                <label for="accuracy">I confirm that all information provided is accurate and complete</label>
-                            </div>
+                        <!-- Agreement -->
+                        <div class="form-checkbox agreement">
+                            <input type="checkbox" id="agreement" name="agreement" required>
+                            <label for="agreement">
+                                ✅ I agree to VrindaGo's <a href="#" target="_blank">Terms of Service</a> and confirm that I have the authority to list this property. 
+                                <strong>No commission fees!</strong>
+                            </label>
                         </div>
                     </div>
                     
                     <!-- Success Message -->
                     <div class="form-section" id="success" style="display: none;">
-                        <div class="success-message">
-                            <div class="success-icon">
-                                <i class="fas fa-check"></i>
-                            </div>
-                            <h2 class="success-title">Registration Successful!</h2>
-                            <p class="success-subtitle">Thank you for registering with VrindaGo. Your property will be reviewed within 24-48 hours. You'll receive an email confirmation and login credentials once approved.</p>
-                            <div style="display: flex; gap: var(--space-4); justify-content: center; margin-top: var(--space-6);">
-                                <a href="index.html" class="nav-btn secondary">Back to Home</a>
-                                <a href="login.html" class="nav-btn primary">Login Now</a>
-                            </div>
+                        <div class="success-animation">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h2>🎉 Registration Successful!</h2>
+                        <p>Your property has been submitted for review. Our team will contact you within 24 hours via WhatsApp to complete the setup.</p>
+                        <div class="next-steps">
+                            <h3>What happens next?</h3>
+                            <ul>
+                                <li>✅ We'll verify your property details</li>
+                                <li>📸 Help you add photos and complete description</li>
+                                <li>🚀 Your property goes live on VrindaGo</li>
+                                <li>📱 Start receiving bookings via WhatsApp</li>
+                            </ul>
+                        </div>
+                        <div class="success-actions">
+                            <a href="index.html" class="btn btn-primary">View VrindaGo Website</a>
+                            <a href="dashboard.html" class="btn btn-secondary">Owner Dashboard</a>
                         </div>
                     </div>
+                    
+                    <!-- Form Navigation -->
+                    <div class="form-navigation">
+                        <button type="submit" class="btn-submit" id="submitBtn">
+                            🚀 List My Property Now - It's FREE!
+                        </button>
+                        <p class="submit-note">✨ No hidden fees • Start earning immediately • 24/7 support</p>
+                    </div>
                 </form>
-                
-                <!-- Navigation Buttons -->
-                <div class="form-navigation" id="formNavigation">
-                    <button type="button" class="nav-btn secondary" id="prevBtn" style="visibility: hidden;">
-                        <i class="fas fa-arrow-left"></i> Previous
-                    </button>
-                    <button type="button" class="nav-btn primary" id="nextBtn">
-                        Next <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
             </div>
         </div>
     </div>
     
     <!-- Scripts -->
-    <script src="js/register.js"></script>
+    <script src="js/register-simple.js"></script>
 </body>
 </html>
