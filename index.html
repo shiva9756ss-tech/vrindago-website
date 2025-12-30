@@ -594,9 +594,18 @@
                     </button>
                 </div>
                 
-                <a href="login.html" class="nav-link nav-login">
-                    <i class="fas fa-user-circle"></i> Owner Login
-                </a>
+                <div class="nav-dropdown">
+                    <a href="login.html" class="nav-link nav-login">
+                        <i class="fas fa-user-circle"></i> Owner Login
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="login.html" class="dropdown-item">Login</a>
+                        <a href="register.html" class="dropdown-item">Register Property</a>
+                        <a href="dashboard.html" class="dropdown-item">Owner Dashboard</a>
+                        <a href="admin.html" class="dropdown-item">Admin Panel</a>
+                    </div>
+                </div>
                 <div class="nav-contact">
                     <div class="contact-info">
                         <span class="contact-label">Call Us</span>
@@ -617,6 +626,19 @@
                 <div class="hero-badge">
                     <i class="fas fa-trophy"></i>
                     <span>India's #1 Vrindavan Directory</span>
+                </div>
+                
+                <!-- Property Owner Quick Actions -->
+                <div class="owner-actions" style="display: flex; gap: 15px; margin: 20px 0; justify-content: center; flex-wrap: wrap;">
+                    <a href="register.html" class="btn-primary" style="padding: 12px 24px; background: #ff6600; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">
+                        <i class="fas fa-plus"></i> List Your Property
+                    </a>
+                    <a href="dashboard.html" class="btn-secondary" style="padding: 12px 24px; background: #10b981; color: white; text-decoration: none; border-radius: 8px; font-weight: 600;">
+                        <i class="fas fa-chart-bar"></i> Owner Dashboard
+                    </a>
+                    <a href="rooms.html" class="btn-outline" style="padding: 12px 24px; border: 2px solid #3b82f6; color: #3b82f6; text-decoration: none; border-radius: 8px; font-weight: 600;">
+                        <i class="fas fa-bed"></i> Browse All Rooms
+                    </a>
                 </div>
                 <h1 class="search-title">Find Premium Accommodations in Vrindavan</h1>
                 <p class="search-subtitle">500+ Verified Properties | Instant Booking | Trusted by 50,000+ Pilgrims</p>
@@ -1984,6 +2006,7 @@
     <script src="js/advanced-search.js"></script>
     <script src="js/enhanced-ux.js"></script>
     <script src="js/booking-system.js"></script>
+    <script src="js/blog-interactions.js"></script>
     <script src="js/analytics.js"></script>
     
     <!-- Enhanced WhatsApp Floating Button -->
@@ -2001,6 +2024,62 @@
 
     <!-- Enhanced Floating Button Styles -->
     <style>
+        /* Dropdown Menu Styles */
+        .nav-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .nav-dropdown .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            min-width: 200px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            z-index: 1000;
+            border: 1px solid #e2e8f0;
+            margin-top: 5px;
+        }
+        
+        .nav-dropdown:hover .dropdown-menu {
+            display: block;
+            animation: fadeInDown 0.3s ease;
+        }
+        
+        .dropdown-item {
+            display: block;
+            padding: 12px 16px;
+            color: #1a202c;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+        
+        .dropdown-item:hover {
+            background: #f8f9fa;
+            color: #ff6600;
+            transform: translateX(5px);
+        }
+        
+        .nav-login .fas.fa-chevron-down {
+            font-size: 10px;
+            margin-left: 5px;
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* WhatsApp Float Styles */
         .whatsapp-float-enhanced {
             position: fixed;
             bottom: 30px;
