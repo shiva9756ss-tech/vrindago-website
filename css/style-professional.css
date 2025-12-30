@@ -1,7 +1,7 @@
 /* ===================================
-   VrindaGo™ - Professional Business Directory
-   Corporate Design with Trust Indicators
-   Enhanced Professional Appearance
+   VrindaGo™ - Peacock Professional Business Directory
+   Krishna-Inspired Peacock Design with Trust Indicators
+   Enhanced Professional Appearance with Peacock Theme
 =================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;600;700;800&display=swap');
@@ -22,31 +22,42 @@ html {
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
-    color: #1a1a1a;
-    background-color: #f8f9fa;
+    color: #1a202c;
+    background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%);
     overflow-x: hidden;
 }
 
-/* Professional Color Palette */
+/* Peacock Professional Color Palette */
 :root {
-    /* Primary Brand Colors (VrindaGo Logo) */
-    --primary-blue: #1e40af;
-    --primary-blue-light: #3b82f6;
-    --primary-blue-dark: #1e3a8a;
-    --accent-gold: #eab308;
-    --accent-gold-light: #fbbf24;
-    --accent-gold-dark: #d97706;
-    --accent-red: #dc3545;
-    --accent-green: #10b981;
+    /* Primary Peacock Colors */
+    --primary-blue: #1e3a8a;        /* Peacock royal blue */
+    --primary-blue-light: #0ea5e9;   /* Peacock cyan */
+    --primary-blue-dark: #1e3a8a;    /* Deep peacock */
+    --accent-gold: #f59e0b;          /* Peacock gold */
+    --accent-gold-light: #fbbf24;    /* Light gold */
+    --accent-gold-dark: #d97706;     /* Dark gold */
+    --accent-red: #ef4444;           /* Peacock red */
+    --accent-green: #059669;         /* Peacock emerald */
     
-    /* Professional Corporate Colors */
+    /* Peacock Secondary Colors */
+    --peacock-teal: #0d9488;         /* Teal green */
+    --peacock-indigo: #4338ca;       /* Deep indigo */
+    --peacock-violet: #7c3aed;       /* Purple violet */
+    --peacock-cyan: #0ea5e9;         /* Bright cyan */
+    
+    /* Professional Corporate Colors with Peacock Base */
     --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --bg-light: #f1f3f4;
-    --bg-dark: #1a202c;
-    --border-light: #e2e8f0;
-    --border-medium: #cbd5e0;
-    --border-dark: #a0aec0;
+    --bg-secondary: #f0f9ff;         /* Light peacock blue */
+    --bg-light: #ecfdf5;             /* Light peacock green */
+    --bg-dark: #1e3a8a;              /* Peacock dark */
+    --border-light: rgba(30, 58, 138, 0.1);
+    --border-medium: rgba(30, 58, 138, 0.2);
+    --border-dark: rgba(30, 58, 138, 0.3);
+    
+    /* Peacock Gradients */
+    --peacock-gradient: linear-gradient(135deg, var(--primary-blue), var(--peacock-cyan), var(--peacock-teal));
+    --peacock-gradient-light: linear-gradient(135deg, rgba(30, 58, 138, 0.1), rgba(14, 165, 233, 0.1));
+    
     
     /* Text Colors */
     --text-primary: #1a202c;
@@ -174,14 +185,14 @@ img {
     }
 }
 
-/* Enhanced Professional Header */
+/* Enhanced Professional Header with Peacock Theme */
 .header {
-    background: var(--bg-primary);
-    border-bottom: 3px solid var(--primary-blue);
+    background: var(--peacock-gradient);
+    border-bottom: 3px solid var(--peacock-cyan);
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 8px 32px rgba(30, 58, 138, 0.15);
 }
 
 .nav {
@@ -201,8 +212,14 @@ img {
     width: 50px;
     height: 50px;
     border-radius: var(--radius-md);
-    border: 2px solid var(--primary-blue);
-    box-shadow: var(--shadow-md);
+    border: 2px solid white;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.nav-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
 }
 
 .brand-info {
@@ -215,19 +232,19 @@ img {
     font-family: 'Roboto', sans-serif;
     font-size: 1.8rem;
     font-weight: 700;
-    color: var(--primary-blue);
-    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     line-height: 1;
 }
 
 .nav-title sup {
     font-size: 0.6rem;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .nav-tagline {
     font-size: 0.75rem;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.8);
     font-weight: 500;
     margin-top: -2px;
 }
@@ -240,7 +257,7 @@ img {
 
 .nav-link {
     font-weight: 500;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.9);
     transition: all 0.3s ease;
     padding: var(--space-2) var(--space-3);
     border-radius: var(--radius-sm);
@@ -248,8 +265,9 @@ img {
 }
 
 .nav-link:hover {
-    color: var(--primary-blue);
-    background: rgba(30, 64, 175, 0.1);
+    color: var(--accent-gold);
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
 }
 
 .nav-contact {
@@ -257,7 +275,7 @@ img {
     align-items: center;
     gap: var(--space-4);
     padding-left: var(--space-4);
-    border-left: 2px solid var(--border-light);
+    border-left: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 .contact-info {
@@ -268,34 +286,35 @@ img {
 
 .contact-label {
     font-size: 0.75rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.7);
     font-weight: 500;
 }
 
 .contact-number {
     font-size: 1.1rem;
     font-weight: 700;
-    color: var(--primary-blue);
+    color: white;
     letter-spacing: 0.5px;
 }
 
 .nav-cta {
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
-    color: white;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-dark) 100%);
+    color: var(--primary-blue);
     padding: var(--space-3) var(--space-5);
     border-radius: var(--radius-lg);
     font-weight: 600;
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-size: 0.9rem;
+    transition: all 0.3s ease;
 }
 
 .nav-cta:hover {
-    background: var(--peacock-gradient-hover);
-    color: white;
+    background: linear-gradient(135deg, #fbbf24 0%, var(--accent-gold) 100%);
+    color: var(--primary-blue);
     transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
 }
 
 @media (max-width: 1024px) {
