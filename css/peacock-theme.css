@@ -552,7 +552,32 @@ a:not(.btn):not(.nav-link):hover {
 .location {
     color: var(--text-secondary);
     font-size: 14px;
-    margin-bottom: var(--space-2);
+    margin-bottom: var(--space-3);
+    line-height: 1.4;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-1);
+    margin-bottom: var(--space-3);
+}
+
+.contact-info span {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.contact-info .phone {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.contact-info .email {
+    color: var(--text-secondary);
 }
 
 .rating {
@@ -569,6 +594,65 @@ a:not(.btn):not(.nav-link):hover {
 .rating-text {
     font-size: 13px;
     color: var(--text-secondary);
+}
+
+/* Contact Buttons */
+.contact-buttons {
+    display: flex;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    flex-wrap: wrap;
+}
+
+.contact-btn {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    flex: 1;
+    justify-content: center;
+    min-width: 80px;
+}
+
+.call-btn {
+    background: var(--primary-blue);
+    color: white;
+    border: 1px solid var(--primary-blue);
+}
+
+.call-btn:hover {
+    background: var(--primary-blue-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+.whatsapp-btn {
+    background: #25d366;
+    color: white;
+    border: 1px solid #25d366;
+}
+
+.whatsapp-btn:hover {
+    background: #128c7e;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.map-btn {
+    background: var(--accent-gold);
+    color: var(--primary-blue);
+    border: 1px solid var(--accent-gold);
+}
+
+.map-btn:hover {
+    background: #eab308;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
 }
 
 .restaurant-content {
