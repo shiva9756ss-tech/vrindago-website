@@ -3,7 +3,7 @@
 <!-- 
 VrindaGo Website Sitemap
 Optimized for Search Engines (Google, Bing, Yahoo)
-Last updated: December 28, 2025
+Last updated: December 30, 2025
 Website: https://vrindago.in
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
@@ -19,7 +19,7 @@ Website: https://vrindago.in
         <xhtml:link rel="alternate" hreflang="en" href="https://vrindago.in/"/>
         <xhtml:link rel="alternate" hreflang="hi" href="https://vrindago.in/hi/"/>
         <xhtml:link rel="alternate" hreflang="x-default" href="https://vrindago.in/"/>
-        <lastmod>2025-12-28</lastmod>
+        <lastmod>2025-12-30</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -33,7 +33,7 @@ Website: https://vrindago.in
     <url>
         <loc>https://vrindago.in/about.html</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://vrindago.in/about.html"/>
-        <lastmod>2025-12-28</lastmod>
+        <lastmod>2025-12-30</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -42,7 +42,7 @@ Website: https://vrindago.in
     <url>
         <loc>https://vrindago.in/rooms.html</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://vrindago.in/rooms.html"/>
-        <lastmod>2025-12-28</lastmod>
+        <lastmod>2025-12-30</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.95</priority>
         <image:image>
