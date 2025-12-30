@@ -350,8 +350,18 @@
         });
     </script>
 
-    <!-- Additional Contact Form Styles -->
+    <!-- Contact Page Enhanced Styles -->
     <style>
+        /* Import peacock theme variables */
+        :root {
+            --primary-peacock: #1e3a8a;
+            --secondary-peacock: #3b82f6;
+            --accent-peacock: #06b6d4;
+            --success-peacock: #10b981;
+            --warning-peacock: #f59e0b;
+            --error-peacock: #ef4444;
+        }
+        
         .form-feedback {
             margin-top: 1rem;
             padding: 1rem;
@@ -359,51 +369,98 @@
         }
         
         .success-message {
-            background: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid var(--success-peacock);
             padding: 1rem;
             border-radius: 8px;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
         }
         
         .error-message {
-            background: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid var(--error-peacock);
             padding: 1rem;
             border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
         }
         
         .form-group select {
             width: 100%;
             padding: 0.75rem;
-            border: 1px solid #ddd;
+            border: 2px solid #e2e8f0;
             border-radius: 8px;
             font-size: 1rem;
             background: white;
             font-family: inherit;
+            transition: all 0.2s ease;
         }
         
         .form-group select:focus {
             outline: none;
-            border-color: #007bff;
-            box-shadow: 0 0 0 2px rgba(0,123,255,0.25);
+            border-color: var(--primary-peacock);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
         }
         
-        input:invalid, textarea:invalid {
-            border-color: #e74c3c;
+        .form-group input,
+        .form-group textarea {
+            border: 2px solid #e2e8f0;
+            transition: all 0.2s ease;
         }
         
-        input:valid, textarea:valid {
-            border-color: #27ae60;
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: var(--primary-peacock);
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+        
+        input:invalid, 
+        textarea:invalid,
+        select:invalid {
+            border-color: var(--error-peacock);
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+        }
+        
+        input:valid, 
+        textarea:valid,
+        select:valid {
+            border-color: var(--success-peacock);
         }
         
         .btn:disabled {
             opacity: 0.6;
             cursor: not-allowed;
+            background: #94a3b8;
+        }
+        
+        /* Enhanced contact cards */
+        .contact-card {
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.05), rgba(59, 130, 246, 0.05));
+            border: 1px solid rgba(30, 58, 138, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.15);
+        }
+        
+        /* Submit button enhancement */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-peacock), var(--secondary-peacock));
+            border: none;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
         }
     </style>
     
