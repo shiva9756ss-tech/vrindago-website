@@ -1,11 +1,73 @@
+/* ===================================
+   VrindaGo™ - Peacock Theme Enhancement
+   Comprehensive Krishna-inspired Peacock Colors
+=================================== */
+
+/* Enhanced Peacock Color Palette */
+:root {
+    /* Primary Peacock Colors */
+    --peacock-royal: #1e3a8a;        /* Deep royal blue */
+    --peacock-cyan: #0ea5e9;         /* Bright cyan blue */
+    --peacock-teal: #0d9488;         /* Teal green */
+    --peacock-emerald: #059669;       /* Emerald green */
+    --peacock-indigo: #4338ca;       /* Deep indigo */
+    --peacock-violet: #7c3aed;       /* Purple violet */
+    
+    /* Peacock Accent Colors */
+    --peacock-gold: #f59e0b;         /* Golden yellow */
+    --peacock-orange: #ea580c;       /* Warm orange */
+    --peacock-pink: #ec4899;         /* Vibrant pink */
+    --peacock-lime: #65a30d;         /* Lime green */
+    
+    /* Gradients */
+    --peacock-gradient: linear-gradient(135deg, var(--peacock-royal), var(--peacock-cyan), var(--peacock-teal));
+    --peacock-gradient-hover: linear-gradient(135deg, var(--peacock-indigo), var(--peacock-violet), var(--peacock-pink));
+    --peacock-gradient-light: linear-gradient(135deg, rgba(30, 58, 138, 0.1), rgba(14, 165, 233, 0.1), rgba(13, 148, 136, 0.1));
+    
+    /* Text Colors */
+    --peacock-text-primary: var(--peacock-royal);
+    --peacock-text-secondary: var(--peacock-teal);
+    --peacock-text-accent: var(--peacock-gold);
+    
+    /* Background Colors */
+    --peacock-bg-primary: #f0f9ff;   /* Light blue background */
+    --peacock-bg-secondary: #ecfdf5; /* Light green background */
+    --peacock-bg-accent: #fefce8;    /* Light yellow background */
+}
+
+/* Apply Peacock Theme to Body */
+body {
+    background: var(--peacock-bg-primary);
+    color: var(--peacock-text-primary);
+}
+
+/* Navigation Enhancements */
+.nav, .navbar, .header {
+    background: var(--peacock-gradient);
+    box-shadow: 0 8px 32px rgba(30, 58, 138, 0.15);
+}
+
+.nav-link, .navbar a {
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .navbar a:hover {
+    color: var(--peacock-gold);
+    transform: translateY(-2px);
+}
+
 /* VrindaGo Logo Specific Styles */
 .nav-logo {
     transition: transform 0.3s ease, filter 0.3s ease;
+    color: white;
+    font-weight: 800;
 }
 
 .nav-logo:hover {
     transform: scale(1.05);
     filter: brightness(1.1);
+    color: var(--peacock-gold);
 }
 
 /* Peacock Feather Inspired Elements */
@@ -149,4 +211,96 @@
         background: white !important;
         color: var(--text-primary) !important;
     }
+}
+
+/* ===================================
+   COMPREHENSIVE PEACOCK WEBSITE STYLING
+=================================== */
+
+/* Cards and Containers */
+.business-card, .contact-card, .property-card, .card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(240,249,255,0.8));
+    border: 1px solid rgba(30, 58, 138, 0.1);
+    box-shadow: 0 4px 20px rgba(30, 58, 138, 0.08);
+    transition: all 0.3s ease;
+}
+
+.business-card:hover, .contact-card:hover, .property-card:hover, .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(30, 58, 138, 0.15);
+    border-color: var(--peacock-cyan);
+}
+
+/* Enhanced Button Styling for All Pages */
+.btn:not(.control-btn), .button, .btn-primary, .action-btn, .filter-btn {
+    background: var(--peacock-gradient) !important;
+    color: white !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn:not(.control-btn):hover, .button:hover, .btn-primary:hover, .action-btn:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(30, 58, 138, 0.3) !important;
+    background: var(--peacock-gradient-hover) !important;
+}
+
+/* Forms Enhanced */
+.form-input, .form-select, .form-textarea, 
+input[type="text"], input[type="email"], input[type="tel"], 
+textarea, select {
+    border: 2px solid rgba(30, 58, 138, 0.2) !important;
+    background: rgba(255, 255, 255, 0.9) !important;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus, 
+input:focus, textarea:focus, select:focus {
+    border-color: var(--peacock-cyan) !important;
+    box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1) !important;
+    outline: none !important;
+}
+
+/* Headers Enhanced */
+.section-title, .page-title, h1, h2, h3 {
+    color: var(--peacock-royal) !important;
+}
+
+/* Pricing Enhanced */
+.price, .amount, .rating-value {
+    color: var(--peacock-teal) !important;
+    font-weight: 700 !important;
+}
+
+/* Badges Enhanced */
+.badge, .amenity-tag, .status-badge {
+    background: var(--peacock-gradient-light) !important;
+    border: 1px solid var(--peacock-cyan) !important;
+    color: var(--peacock-royal) !important;
+}
+
+/* Navigation Enhanced */
+.nav-link:hover {
+    color: var(--peacock-gold) !important;
+}
+
+/* Links Enhanced */
+a:not(.btn):not(.nav-link) {
+    color: var(--peacock-teal);
+}
+
+a:not(.btn):not(.nav-link):hover {
+    color: var(--peacock-gold);
+}
+
+/* Success/Error States */
+.success-message, .form-success {
+    background: var(--peacock-bg-secondary) !important;
+    border-left: 4px solid var(--peacock-emerald) !important;
+    color: var(--peacock-emerald) !important;
+}
+
+.error-message, .form-error {
+    background: #fef2f2 !important;
+    border-left: 4px solid #ef4444 !important;
+    color: #dc2626 !important;
 }
