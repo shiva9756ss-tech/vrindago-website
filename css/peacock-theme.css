@@ -1,50 +1,53 @@
 /* ===================================
-   VrindaGo™ - Peacock Theme Enhancement
-   Comprehensive Krishna-inspired Peacock Colors
+   VrindaGo™ - Brand Enhancement Theme
+   Spiritual, Premium & Clean Design
+   Deep Blue & Gold Color Palette
 =================================== */
 
-/* Enhanced Peacock Color Palette */
+/* VrindaGo Brand Color Palette */
 :root {
-    /* Primary Peacock Colors */
-    --peacock-royal: #1e3a8a;        /* Deep royal blue */
-    --peacock-cyan: #0ea5e9;         /* Bright cyan blue */
-    --peacock-teal: #0d9488;         /* Teal green */
-    --peacock-emerald: #059669;       /* Emerald green */
-    --peacock-indigo: #4338ca;       /* Deep indigo */
-    --peacock-violet: #7c3aed;       /* Purple violet */
+    /* VrindaGo Primary Colors */
+    --vrinda-primary: #0D3B66;       /* Deep Blue */
+    --vrinda-light: #1A5490;         /* Light Blue */
+    --vrinda-accent: #F4C153;        /* Gold */
+    --vrinda-secondary: #E67E22;     /* Sacred Orange */
+    --vrinda-tertiary: #27AE60;      /* Sacred Green */
+    --vrinda-quaternary: #C0392B;    /* Sacred Red */
     
-    /* Peacock Accent Colors */
-    --peacock-gold: #f59e0b;         /* Golden yellow */
-    --peacock-orange: #ea580c;       /* Warm orange */
-    --peacock-pink: #ec4899;         /* Vibrant pink */
-    --peacock-lime: #65a30d;         /* Lime green */
+    /* VrindaGo Extended Colors */
+    --vrinda-gold: #F4C153;
+    --vrinda-gold-light: #F7CE73;
+    --vrinda-gold-dark: #E6A82E;
+    --vrinda-cream: #FBF9F1;
+    --vrinda-white: #FFFEF7;
     
-    /* Gradients */
-    --peacock-gradient: linear-gradient(135deg, var(--peacock-royal), var(--peacock-cyan), var(--peacock-teal));
-    --peacock-gradient-hover: linear-gradient(135deg, var(--peacock-indigo), var(--peacock-violet), var(--peacock-pink));
-    --peacock-gradient-light: linear-gradient(135deg, rgba(30, 58, 138, 0.1), rgba(14, 165, 233, 0.1), rgba(13, 148, 136, 0.1));
+    /* VrindaGo Gradients */
+    --vrinda-gradient: linear-gradient(135deg, var(--vrinda-primary), var(--vrinda-light), var(--vrinda-accent));
+    --vrinda-gradient-hover: linear-gradient(135deg, var(--vrinda-light), var(--vrinda-accent), var(--vrinda-secondary));
+    --vrinda-gradient-light: linear-gradient(135deg, rgba(13, 59, 102, 0.1), rgba(244, 193, 83, 0.1), rgba(251, 249, 241, 0.1));
     
-    /* Text Colors */
-    --peacock-text-primary: var(--peacock-royal);
-    --peacock-text-secondary: var(--peacock-teal);
-    --peacock-text-accent: var(--peacock-gold);
+    /* VrindaGo Text Colors */
+    --vrinda-text-primary: var(--vrinda-primary);
+    --vrinda-text-secondary: #5D6D7E;
+    --vrinda-text-accent: var(--vrinda-accent);
     
-    /* Background Colors */
-    --peacock-bg-primary: #f0f9ff;   /* Light blue background */
-    --peacock-bg-secondary: #ecfdf5; /* Light green background */
-    --peacock-bg-accent: #fefce8;    /* Light yellow background */
+    /* VrindaGo Background Colors */
+    --vrinda-bg-primary: var(--vrinda-white);
+    --vrinda-bg-secondary: var(--vrinda-cream);
+    --vrinda-bg-accent: #F8F4E6;
 }
 
-/* Apply Peacock Theme to Body */
+/* Apply VrindaGo Theme to Body */
 body {
-    background: var(--peacock-bg-primary);
-    color: var(--peacock-text-primary);
+    background: var(--vrinda-bg-primary);
+    color: var(--vrinda-text-primary);
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Navigation Enhancements */
 .nav, .navbar, .header {
-    background: var(--peacock-gradient);
-    box-shadow: 0 8px 32px rgba(30, 58, 138, 0.15);
+    background: var(--vrinda-gradient);
+    box-shadow: 0 8px 32px rgba(13, 59, 102, 0.15);
 }
 
 .nav-link, .navbar a {
@@ -53,7 +56,7 @@ body {
 }
 
 .nav-link:hover, .navbar a:hover {
-    color: var(--peacock-gold);
+    color: var(--vrinda-accent);
     transform: translateY(-2px);
 }
 
@@ -67,24 +70,24 @@ body {
 .nav-logo:hover {
     transform: scale(1.05);
     filter: brightness(1.1);
-    color: var(--peacock-gold);
+    color: var(--vrinda-accent);
 }
 
-/* Peacock Feather Inspired Elements */
-.peacock-accent {
-    background: var(--peacock-gradient);
+/* VrindaGo Brand Inspired Elements */
+.vrinda-accent {
+    background: var(--vrinda-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-.peacock-border {
-    border-image: var(--peacock-gradient) 1;
+.vrinda-border {
+    border-image: var(--vrinda-gradient) 1;
 }
 
-/* Enhanced Professional Buttons with Peacock Theme */
-.btn-peacock {
-    background: var(--peacock-gradient);
+/* Enhanced Professional Buttons with VrindaGo Theme */
+.btn-vrinda {
+    background: var(--vrinda-gradient);
     color: white;
     border: none;
     padding: var(--space-4) var(--space-8);
@@ -98,6 +101,7 @@ body {
     box-shadow: var(--shadow-md);
     position: relative;
     overflow: hidden;
+    font-family: 'Poppins', sans-serif;
 }
 
 .btn-peacock::before {

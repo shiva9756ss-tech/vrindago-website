@@ -4,7 +4,7 @@
    Enhanced Professional Appearance with Peacock Theme
 =================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 /* CSS Reset */
@@ -20,53 +20,55 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
-    color: #1a202c;
-    background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%);
+    color: #2C3E50;
+    background: linear-gradient(135deg, #FFFEF7 0%, #FBF9F1 100%);
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Peacock Professional Color Palette */
+/* VrindaGo Brand Color Palette */
 :root {
-    /* Primary Peacock Colors */
-    --primary-blue: #1e3a8a;        /* Peacock royal blue */
-    --primary-blue-light: #0ea5e9;   /* Peacock cyan */
-    --primary-blue-dark: #1e3a8a;    /* Deep peacock */
-    --accent-gold: #f59e0b;          /* Peacock gold */
-    --accent-gold-light: #fbbf24;    /* Light gold */
-    --accent-gold-dark: #d97706;     /* Dark gold */
-    --accent-red: #ef4444;           /* Peacock red */
-    --accent-green: #059669;         /* Peacock emerald */
+    /* VrindaGo Brand Colors */
+    --primary-color: #0D3B66;
+    --primary-light: #1A5490;
+    --primary-dark: #092B4D;
+    --accent-color: #F4C153;
+    --accent-light: #F7CE73;
+    --accent-dark: #E6A82E;
+    --spiritual-orange: #E67E22;
+    --spiritual-green: #27AE60;
+    --spiritual-red: #C0392B;
     
-    /* Peacock Secondary Colors */
-    --peacock-teal: #0d9488;         /* Teal green */
-    --peacock-indigo: #4338ca;       /* Deep indigo */
-    --peacock-violet: #7c3aed;       /* Purple violet */
-    --peacock-cyan: #0ea5e9;         /* Bright cyan */
+    /* VrindaGo Supporting Colors */
+    --vrinda-teal: #17A2B8;
+    --vrinda-indigo: #6610F2;
+    --vrinda-purple: #6F42C1;
     
-    /* Professional Corporate Colors with Peacock Base */
-    --bg-primary: #ffffff;
-    --bg-secondary: #f0f9ff;         /* Light peacock blue */
-    --bg-light: #ecfdf5;             /* Light peacock green */
-    --bg-dark: #1e3a8a;              /* Peacock dark */
-    --border-light: rgba(30, 58, 138, 0.1);
-    --border-medium: rgba(30, 58, 138, 0.2);
-    --border-dark: rgba(30, 58, 138, 0.3);
+    /* VrindaGo Background Colors */
+    --bg-primary: #FFFEF7;
+    --bg-secondary: #FBF9F1;
+    --bg-accent: #F8F4E6;
+    --bg-dark: #0D3B66;
+    --border-light: rgba(13, 59, 102, 0.1);
+    --border-medium: rgba(13, 59, 102, 0.2);
+    --border-dark: rgba(13, 59, 102, 0.3);
     
-    /* Peacock Gradients */
-    --peacock-gradient: linear-gradient(135deg, var(--primary-blue), var(--peacock-cyan), var(--peacock-teal));
-    --peacock-gradient-light: linear-gradient(135deg, rgba(30, 58, 138, 0.1), rgba(14, 165, 233, 0.1));
+    /* VrindaGo Gradients */
+    --vrinda-gradient: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    --vrinda-gradient-light: linear-gradient(135deg, rgba(13, 59, 102, 0.1), rgba(244, 193, 83, 0.1));
     
     
-    /* Text Colors */
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --text-muted: #718096;
-    --text-light: #a0aec0;
-    --text-success: #10b981;
-    --text-danger: #ef4444;
-    --text-warning: #f59e0b;
+    /* VrindaGo Text Colors */
+    --text-primary: #2C3E50;
+    --text-secondary: #5D6D7E;
+    --text-muted: #85929E;
+    --text-light: #BDC3C7;
+    --text-success: #27AE60;
+    --text-danger: #E74C3C;
+    --text-warning: #F39C12;
     
     /* Spacing System */
     --space-1: 0.25rem;
@@ -96,21 +98,21 @@ body {
     --radius-xl: 1rem;
     --radius-2xl: 1.5rem;
     
-    /* VrindaGo Peacock Feather Gradient */
-    --peacock-gradient: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 50%, var(--accent-gold) 100%);
-    --peacock-gradient-hover: linear-gradient(135deg, var(--primary-blue-dark) 0%, var(--primary-blue) 50%, var(--accent-gold-light) 100%);
-    --peacock-reverse: linear-gradient(135deg, var(--accent-gold) 0%, var(--primary-blue-light) 50%, var(--primary-blue) 100%);
+    /* VrindaGo Brand Gradient */
+    --vrinda-gradient: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    --vrinda-gradient-hover: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 50%, var(--accent-light) 100%);
+    --vrinda-reverse: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-light) 50%, var(--primary-color) 100%);
 }
 
 /* Base Styles */
 a {
-    color: var(--primary-blue);
+    color: var(--primary-color);
     text-decoration: none;
     transition: all 0.3s ease;
 }
 
 a:hover {
-    color: var(--primary-blue-dark);
+    color: var(--accent-color);
 }
 
 .nav-login {

@@ -5,17 +5,20 @@
 
 /* Book Now Button */
 .book-now-btn {
-    background: var(--accent-green) !important;
+    background: var(--spiritual-green) !important;
     color: white !important;
     border: none;
     font-weight: 600;
     transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-lg);
 }
 
 .book-now-btn:hover {
-    background: #059669 !important;
+    background: #219A52 !important;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+    box-shadow: 0 6px 16px rgba(39, 174, 96, 0.4);
 }
 
 /* Booking Modal */
@@ -56,9 +59,10 @@
     align-items: center;
     padding: var(--space-6);
     border-bottom: 1px solid var(--border-light);
-    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: white;
     border-radius: 16px 16px 0 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .booking-header h3 {
@@ -98,6 +102,11 @@
 .booking-step h4 {
     display: flex;
     align-items: center;
+    color: var(--primary-color);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+}
     gap: var(--space-2);
     color: var(--primary-blue);
     font-size: 1.3rem;
